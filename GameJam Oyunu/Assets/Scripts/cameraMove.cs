@@ -7,7 +7,9 @@ public class cameraMove : MonoBehaviour
     public Transform player;
     
 
-    float x;
+    public float x;
+    
+
     float y;
     public float sent;
     
