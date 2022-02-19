@@ -16,7 +16,7 @@ public class cameraMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        x = 180f;
+        
 
     }
 
@@ -26,7 +26,7 @@ public class cameraMove : MonoBehaviour
         x += Input.GetAxis("Mouse X")* sent;
         y += -Input.GetAxis("Mouse Y") * sent;
 
-        y = Mathf.Clamp(y,-85,85);
+        y = Mathf.Clamp(y,-90,90);
         transform.localRotation = Quaternion.Euler(y,player.transform.rotation.y,player.transform.rotation.z);
       
         player.transform.localRotation = Quaternion.Euler(0,x,0);

@@ -28,7 +28,6 @@ public class objealma : MonoBehaviour
             if (rbObje)
             {
                 rbObje.isKinematic = false;
-                rbObje.useGravity = true;
                 rbObje = null;
                 cube.transform.parent = null;
             }
@@ -39,8 +38,6 @@ public class objealma : MonoBehaviour
                 {
                     rbObje = obje.transform.GetComponent<Rigidbody>();
                     rbObje.isKinematic = true;
-                    rbObje.useGravity = false;
-                    
                     
                     cube = obje.gameObject;
                     cube.transform.parent = point.transform;
