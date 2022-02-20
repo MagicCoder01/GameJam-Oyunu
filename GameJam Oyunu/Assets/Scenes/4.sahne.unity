@@ -3505,7 +3505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65abfa3448feb91458cf9a9be08a2813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 8300000, guid: f00d5d3837f7fa94280ca46822d81df4, type: 3}
+  audio: {fileID: 0}
 --- !u!135 &1682212636
 SphereCollider:
   m_ObjectHideFlags: 0
