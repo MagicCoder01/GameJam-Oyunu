@@ -18,6 +18,8 @@ public class dialoge : MonoBehaviour
     {
         if(go)
         {
+            audioDisplay.clip = audioClips[index];
+        audioDisplay.Play();
             StartCoroutine(max());
         }
     }
@@ -25,7 +27,7 @@ public class dialoge : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
       audioDisplay.clip = audioClips[index];
-        audioDisplay.Play();
+        audioDisplay.PlayOneShot(audioClips[index]);
         NextPlay();
             
         

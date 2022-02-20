@@ -1141,7 +1141,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &717130440
 SphereCollider:
@@ -2717,7 +2717,6 @@ GameObject:
   - component: {fileID: 2074657450}
   - component: {fileID: 2074657449}
   - component: {fileID: 2074657448}
-  - component: {fileID: 2074657455}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2737,7 +2736,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.665
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2838,7 +2837,13 @@ MonoBehaviour:
   player: {fileID: 400364568}
   TV: {fileID: 1952501867}
   Scenanager: {fileID: 0}
-  diyalogs: []
+  diyalogs:
+  - {fileID: 8300000, guid: fc8b37f4fd2546147a042ae6294ddf50, type: 3}
+  - {fileID: 8300000, guid: f03f398cc1afdc449bc8920afcf8ffd3, type: 3}
+  - {fileID: 8300000, guid: 054d09fae6ca2f843a62633a2a3a6426, type: 3}
+  - {fileID: 8300000, guid: ca1967a7c756f8a419cff434821b63a7, type: 3}
+  - {fileID: 8300000, guid: f0b41d447103bec4bbcf7bee8e909e7b, type: 3}
+  maxIndex: 5
 --- !u!135 &2074657450
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2928,24 +2933,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2074657455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074657447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7df438223a5a39b4d9726695e00121b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioDisplay: {fileID: 2074657448}
-  audioClips:
-  - {fileID: 8300000, guid: fc8b37f4fd2546147a042ae6294ddf50, type: 3}
-  - {fileID: 8300000, guid: 054d09fae6ca2f843a62633a2a3a6426, type: 3}
-  - {fileID: 8300000, guid: f0b41d447103bec4bbcf7bee8e909e7b, type: 3}
-  typingSpeed: 2
 --- !u!4 &2096163614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 111786259296109893, guid: 6532ae69c06a20b42838fd669c43d686, type: 3}

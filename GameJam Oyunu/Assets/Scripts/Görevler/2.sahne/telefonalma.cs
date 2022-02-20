@@ -13,6 +13,8 @@ public class telefonalma : MonoBehaviour
     public static bool KumandaElimde;
     public GameObject Scenanager;
     public AudioClip[] diyalogs;
+    public int maxIndex;
+    int index;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +26,14 @@ public class telefonalma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(telefonAlmak && Input.GetKeyDown(KeyCode.E))
+        
+        if(telefonAlmak && Input.GetKeyDown(KeyCode.E) && index == 0)
         {
             audioS.Stop();
             dialoge.go = true;
+           
+            StartCoroutine(max());
+
            
 
         }
@@ -55,6 +61,43 @@ public class telefonalma : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         audioS.PlayOneShot(telefonSesi);
+    }
+    IEnumerator max() 
+    {
+        yield return new WaitForSeconds(0.0001f);
+      
+       
+       if(index < maxIndex){
+           audioS.PlayOneShot(diyalogs[index]);
+        
+        NextPlay();
+        }
+        
+            
+        
+        
+    
+    }
+    void NextPlay()
+    {
+        
+       
+        if(!audioS.isPlaying)
+        {
+            index++;
+            
+            StartCoroutine(max());
+        }
+        if(audioS.isPlaying)
+        {
+            StartCoroutine(YenidenDene());
+
+        }
+    }
+    IEnumerator YenidenDene()
+    {
+        yield return new WaitForSeconds(0.5f);
+        NextPlay();
     }
    
 
