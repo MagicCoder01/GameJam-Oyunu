@@ -48,5 +48,9 @@ public class PlayerController : MonoBehaviour
             telefonalma.KumandaElimde = true;
 
         }
+        if(other.tag == "deadline")
+        {
+            yeniSahne.finishLevel = true;
+        }
     }
 }

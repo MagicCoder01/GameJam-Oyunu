@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a0bcfd60807114c964c2b5555d7f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneNo: 0
+  nextSceneNo: 1
   Kararma: {fileID: 1887076064}
 --- !u!4 &622343988
 Transform:
@@ -315,7 +315,7 @@ Transform:
   m_Children:
   - {fileID: 1234217687}
   m_Father: {fileID: 543450653430581909}
-  m_RootOrder: 40
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &647660319
 MeshRenderer:
@@ -599,7 +599,7 @@ Transform:
   m_LocalScale: {x: 135.13301, y: 135.13301, z: 135.13301}
   m_Children: []
   m_Father: {fileID: 543450653430581909}
-  m_RootOrder: 41
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &961544483
 MeshRenderer:
@@ -923,7 +923,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234217686}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46fa018de39760345991831e68c729d9, type: 3}
   m_Name: 
@@ -1160,7 +1160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1511096946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2640,6 +2640,10 @@ PrefabInstance:
     - target: {fileID: 3393218125460161861, guid: 6532ae69c06a20b42838fd669c43d686, type: 3}
       propertyPath: angle
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393218125460161861, guid: 6532ae69c06a20b42838fd669c43d686, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3393218125460161861, guid: 6532ae69c06a20b42838fd669c43d686, type: 3}
       propertyPath: direction.y
