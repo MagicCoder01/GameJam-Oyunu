@@ -41,4 +41,12 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector3(move.x, rb.velocity.y,move.z);
     }
+    private void OnTriggerStay(Collider other) {
+        if(other.tag == "kumanda" && Input.GetKeyDown(KeyCode.E))
+        {
+            Destroy(other.gameObject);
+            telefonalma.KumandaElimde = true;
+
+        }
+    }
 }

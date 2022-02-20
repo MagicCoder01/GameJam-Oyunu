@@ -29,9 +29,9 @@ public class cameraMove : MonoBehaviour
         y += -Input.GetAxis("Mouse Y") * sent;
 
         y = Mathf.Clamp(y,-90,90);
-        transform.localRotation = Quaternion.Euler(y,player.transform.rotation.y,player.transform.rotation.z);
+        transform.localRotation = Quaternion.Euler(y,transform.rotation.y,transform.rotation.z);
       
-        player.transform.localRotation = Quaternion.Euler(0,x,0);
+        player.transform.localRotation = Quaternion.Euler(player.transform.rotation.x,x,player.transform.rotation.z);
 
 
     }

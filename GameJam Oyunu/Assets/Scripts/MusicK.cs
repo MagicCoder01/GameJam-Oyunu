@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MusicK : MonoBehaviour
 {
     private static MusicK obje = null;
+    
 
     void Awake()
     {
@@ -27,7 +28,7 @@ public class MusicK : MonoBehaviour
         SceneManager.sceneLoaded -= SahneYuklendi;
     }
 
-    // Yeni bir sahne yüklenince çaðrýlýr
+    // Yeni bir sahne yï¿½klenince ï¿½aï¿½rï¿½lï¿½r
     void SahneYuklendi(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "Sokak")
