@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class dialoge : MonoBehaviour
 {
@@ -9,32 +9,47 @@ public class dialoge : MonoBehaviour
     public AudioClip[] audioClips;
     private int index;
     public float typingSpeed;
+    public static bool go;
 
     
 
-    private void Start()
+    
+    public void play()
     {
-        index = 0;
-        
+        if(go)
+        {
+            StartCoroutine(max());
+        }
     }
-    private void Update()
+    IEnumerator max() 
+    {
+        yield return new WaitForSeconds(0.2f);
+      audioDisplay.clip = audioClips[index];
+        audioDisplay.Play();
+        NextPlay();
+            
+        
+        
+    
+    }
+    void NextPlay()
     {
         if(!audioDisplay.isPlaying)
         {
             index++;
             
-            StartCoroutine(Type());
+            StartCoroutine(max());
+        }
+        if(audioDisplay.isPlaying)
+        {
+            StartCoroutine(YenidenDene());
+
         }
     }
-    IEnumerator Type() 
+    IEnumerator YenidenDene()
     {
-        yield return new WaitForSeconds(0.2f);
-        audioDisplay.clip = audioClips[index];
-            audioDisplay.Play();
-            
-        
-        
-    
+        yield return new WaitForSeconds(2f);
+        NextPlay();
     }
     
     

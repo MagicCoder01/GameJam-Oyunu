@@ -27,6 +27,7 @@ public class telefonalma : MonoBehaviour
         if(telefonAlmak && Input.GetKeyDown(KeyCode.E))
         {
             audioS.Stop();
+            dialoge.go = true;
            
 
         }
