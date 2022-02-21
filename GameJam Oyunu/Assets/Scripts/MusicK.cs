@@ -31,7 +31,7 @@ public class MusicK : MonoBehaviour
     // Yeni bir sahne y�klenince �a�r�l�r
     void SahneYuklendi(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Sokak")
+        if (scene.name == "Credits")
         {
             obje = null;
             Destroy(gameObject);

@@ -14,6 +14,7 @@ public class gorevAmpulTakma : MonoBehaviour
     GameObject lamp;
     public bool MaterialChanger;
     public door kapikodu;
+    public GameObject ligh2;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,22 +24,24 @@ public class gorevAmpulTakma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(MaterialChanger){
-            if( Vector3.Distance(a.transform.position,player.transform.position) <= 1.5f){
+        
+        if(MaterialChanger){   
                 
-                if(lampoff && Input.GetKeyDown(KeyCode.E))
+        if(!lampoff && Input.GetKey(KeyCode.E) && Vector3.Distance(a.transform.position,player.transform.position) <= 1.5f)
         {
-            lamp.GetComponent<MeshRenderer>().material = matLamp;
+            lamp.SetActive(false);
+            ligh2.SetActive(true);
             Dirlight.GetComponent<Light>().intensity = 1;
             kapikodu.enabled = true;
 
-            light.SetActive(true);
+
             
-        }
+            
+        }}
         
                  
-        }
-    }
+        
+    
     }
     private void OnTriggerEnter(Collider other) {
        if(MaterialChanger){
@@ -47,8 +50,8 @@ public class gorevAmpulTakma : MonoBehaviour
             lamp  = other.gameObject;
             other.transform.parent = null;
             other.transform.position = lampPoint.transform.position;
-            other.transform.rotation = lampPoint.transform.rotation;
-            lampoff = true;
+           
+            other.transform.rotation =  Quaternion.Euler(-90f,lampPoint.transform.rotation.y,lampPoint.transform.rotation.z);
             other.transform.GetComponent<Rigidbody>().isKinematic = true;
             other.transform.parent = lampPoint.transform;
             
@@ -60,7 +63,7 @@ public class gorevAmpulTakma : MonoBehaviour
         {
             other.transform.parent = null;
             other.transform.position = lampPoint.transform.position;
-            other.transform.rotation = lampPoint.transform.rotation;
+            other.transform.rotation =  Quaternion.Euler(-90f,lampPoint.transform.rotation.y,lampPoint.transform.rotation.z);
             lampPoint.GetComponent<Rigidbody>().isKinematic=true;
             lampoff = true;
             other.transform.GetComponent<Rigidbody>().isKinematic = true;

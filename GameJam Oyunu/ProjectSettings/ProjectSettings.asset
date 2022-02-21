@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: GameJam Oyunu
+  companyName: Doner Games
+  productName: Where's my medicine?
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.103773594, g: 0.09447313, b: 0.09447313, a: 1}

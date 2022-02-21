@@ -15,6 +15,8 @@ public class telefonalma : MonoBehaviour
     public AudioClip[] diyalogs;
     public int maxIndex;
     int index;
+    public GameObject cam1;
+    public GameObject cam2;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +46,7 @@ public class telefonalma : MonoBehaviour
         {
             
             TV.SetActive(true);
-            yeniSahne.finishLevel = true;
+            StartCoroutine(cameraBasla());
             
            
 
@@ -120,6 +122,16 @@ public class telefonalma : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         NextPlay();
+    }
+    IEnumerator cameraBasla()
+    {
+        yield return new WaitForSeconds(1);
+        cam1.SetActive(false);
+        cam2.SetActive(true);
+        yield return new WaitForSeconds(6f);
+        yeniSahne.finishLevel = true;   
+
+
     }
    
 
