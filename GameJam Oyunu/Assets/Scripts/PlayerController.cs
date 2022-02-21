@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask Ground;
 
     bool isGrounded;
+    public LayerMask objecsE;
+    public static bool konusurkenKarakterKilitleme;
 
     void Start()
     {
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(!konusurkenKarakterKilitleme){
         //grounding
         isGrounded = Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), 0.4f, Ground);
 
@@ -40,6 +43,7 @@ public class PlayerController : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * y;
 
         rb.velocity = new Vector3(move.x, rb.velocity.y,move.z);
+        }
     }
     private void OnTriggerStay(Collider other) {
         if(other.tag == "kumanda" && Input.GetKeyDown(KeyCode.E))
@@ -51,6 +55,18 @@ public class PlayerController : MonoBehaviour
         if(other.tag == "deadline")
         {
             yeniSahne.finishLevel = true;
+        }
+    }
+    private void OnTriggerEnter(Collider other) {
+        if(other.tag =="kumanda" || other.tag == "key" || other.tag == "much" )
+        {
+            Trigger.eTrue = true;
+        }
+    }
+    private void OnTriggerExit(Collider other) {
+        if(other.tag =="kumanda" || other.tag == "key" || other.tag == "much")
+        {
+            Trigger.eTrue = false;
         }
     }
 }

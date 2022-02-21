@@ -5,24 +5,22 @@ using UnityEngine.UI;
 
 public class Trigger : MonoBehaviour
 {
-    public Text Tgr;
+    public GameObject E;
+    public static bool eTrue;
+    
 
 
-    void Start()
-    {
-        Tgr.text = "Aga ilah deðiliz silah deðiliz büyütmeyin bu kadar";
-    }
-
-    void OnTriggerEnter(Collider collider)
-    {
-        if (this.gameObject.tag == "Trigger1")
+   
+    private void Update() {
+        if(eTrue)
         {
-            Tgr.text = "Abi deðilsin ama taþþaklý adamsýn yani";
-        }
-        if (this.gameObject.tag == "Trigger2")
-        {
-            Tgr.text = "Kübü býrak";
-        }
+            E.SetActive(true);
 
+        }
+        else if(!eTrue)
+        {
+            E.SetActive(false);
+            
+        }
     }
 }

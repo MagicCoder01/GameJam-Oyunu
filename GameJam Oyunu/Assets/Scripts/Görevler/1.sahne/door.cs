@@ -28,13 +28,15 @@ public class door : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player")  
         InDistance = true;
+        Trigger.eTrue = true;
     }
     private void OnTriggerExit(Collider other)
     {
         if(other.tag == "Player")
         InDistance = false;
+        Trigger.eTrue = false;
     }
 
     private void Update()

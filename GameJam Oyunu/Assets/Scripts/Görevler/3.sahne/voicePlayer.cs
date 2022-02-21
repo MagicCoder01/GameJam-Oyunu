@@ -18,7 +18,7 @@ public class voicePlayer : MonoBehaviour
         {
             audioSource.PlayOneShot(audio);
             this.transform.GetComponent<Collider>().enabled = !enabled;
-            Destroy(gameObject,5f);
+            Destroy(gameObject,8f);
         }
     }
 }

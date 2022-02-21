@@ -30,30 +30,46 @@ public class telefonalma : MonoBehaviour
         if(telefonAlmak && Input.GetKeyDown(KeyCode.E) && index == 0)
         {
             audioS.Stop();
-            dialoge.go = true;
+            PlayerController.konusurkenKarakterKilitleme = true;
+            
            
             StartCoroutine(max());
 
            
 
         }
-        if(KumandaElimde && Vector3.Distance(televizonyon.transform.position,player.transform.position) <= 3f && Input.GetKeyDown(KeyCode.E))
+        if(Vector3.Distance(televizonyon.transform.position,player.transform.position) <= 3f){
+           
+        if(KumandaElimde  && Input.GetKeyDown(KeyCode.E))
         {
+            
             TV.SetActive(true);
             yeniSahne.finishLevel = true;
             
            
 
 
-        }
+        }}
+        
 
 
         
     }
-    private void OnTriggerStay(Collider other) {
+    private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player")
         {
             telefonAlmak= true;
+            Trigger.eTrue = true;
+            
+
+        }
+    }
+    private void OnTriggerExit(Collider other) {
+        if(other.tag == "Player")
+        {
+            telefonAlmak= false;
+            Trigger.eTrue = false;
+            
 
         }
     }
@@ -71,6 +87,12 @@ public class telefonalma : MonoBehaviour
            audioS.PlayOneShot(diyalogs[index]);
         
         NextPlay();
+        }
+        else if(index >= 4)
+        
+        {
+            PlayerController.konusurkenKarakterKilitleme = false;
+
         }
         
             

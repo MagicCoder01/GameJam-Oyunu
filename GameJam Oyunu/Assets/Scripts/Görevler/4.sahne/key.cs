@@ -18,14 +18,17 @@ public class key : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if(Vector3.Distance(keys.transform.position,Player.transform.position) <= 2f && Input.GetKeyDown(KeyCode.E))
+         if(Vector3.Distance(keys.transform.position,Player.transform.position) <= 2f)
             {
+                
+                if(Input.GetKeyDown(KeyCode.E)){
                 keys.SetActive(false);
                 kapiKodu.enabled  = true;
                 AudioSource.PlayOneShot(ses);
-
+                }
 
             }
+           
         
     }
     

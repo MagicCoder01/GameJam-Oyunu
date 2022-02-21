@@ -24,7 +24,9 @@ public class gorevAmpulTakma : MonoBehaviour
     void Update()
     {
         if(MaterialChanger){
-        if(lampoff && Input.GetKeyDown(KeyCode.E) &&  Vector3.Distance(a.transform.position,player.transform.position) <= 1.5f)
+            if( Vector3.Distance(a.transform.position,player.transform.position) <= 1.5f){
+                
+                if(lampoff && Input.GetKeyDown(KeyCode.E))
         {
             lamp.GetComponent<MeshRenderer>().material = matLamp;
             Dirlight.GetComponent<Light>().intensity = 1;
@@ -32,6 +34,9 @@ public class gorevAmpulTakma : MonoBehaviour
 
             light.SetActive(true);
             
+        }
+        
+                 
         }
     }
     }
